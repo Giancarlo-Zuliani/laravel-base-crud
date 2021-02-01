@@ -9,5 +9,6 @@
     <h2>{{$device -> name}}</h2>
     <h2>{{$device -> model}}</h2>
     <h2>{{$device -> consumption}}</h2>
+    <h2>{{$device -> price}}</h2>
 
 @endsection

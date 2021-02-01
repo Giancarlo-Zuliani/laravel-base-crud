@@ -10,6 +10,6 @@ $factory->define(Device::class, function (Faker $faker) {
         'name' => $faker -> domainWord,
         'model' => $faker -> isbn10,
         'consumption' => $faker -> numberBetween(50,400),
-        'price' => $faker -> numberBetween(5000,40000)
+        'price' => ($faker -> numberBetween(4000, 50000))/100
     ];
 });
