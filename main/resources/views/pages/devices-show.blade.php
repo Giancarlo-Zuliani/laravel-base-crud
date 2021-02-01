@@ -1,14 +1,18 @@
 @extends('layouts.main-layout')
 
+
 @section('content')
+<div>
+    <a class="addbtn" href="{{route('home-devices')}}"> <i class="fas fa-arrow-alt-circle-left"></i>Back</a>
+</div>
 
-<a href="{{Route('home-devices')}}">Back</a>
 
-
-    <h2>{{$device -> id}}</h2>
-    <h2>{{$device -> name}}</h2>
-    <h2>{{$device -> model}}</h2>
-    <h2>{{$device -> consumption}}</h2>
-    <h2>{{$device -> price}}</h2>
+    <div class="product">
+        <h2>ID : {{$device -> id}}</h2>
+        <h2>{{$device -> name}}</h2>
+        <h2>Model num : {{$device -> model}}</h2>
+        <h2>Consumption : {{$device -> consumption}}KW</h2>
+        <h2>Price : {{$device -> price}}USD</h2>
+    </div>
 
 @endsection

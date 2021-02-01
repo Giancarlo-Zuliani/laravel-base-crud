@@ -14,5 +14,11 @@ Route::get('/device/{id}' , 'DeviceController@show')
 Route::get('/new/device/create' , 'DeviceController@create')
     -> name('create-device');
     
-Route::post('/new/device/store' , 'DeviceController@store')
+Route::get('/new/device/store' , 'DeviceController@store')
     -> name('store-device');
+
+Route::get('/device/delete/{id}' , 'DeviceController@destroy')
+    -> name('delete-device');
+
+Route::get('/device/store/{id}', 'DeviceController@edit')->name('edit-device');
+   Route::post('/device/update/{id}', 'DeviceController@update')->name('update-device');

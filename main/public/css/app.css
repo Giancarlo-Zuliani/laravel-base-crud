@@ -24,6 +24,10 @@ body {
   background-color: #242582;
 }
 
+main {
+  min-height: calc(100vh - 300px);
+}
+
 main div {
   width: 75%;
   margin: auto;

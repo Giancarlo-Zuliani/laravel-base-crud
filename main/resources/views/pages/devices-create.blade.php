@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <form action="{{route('store-device')}}" method="post">
+    <form action="{{route('edit-device')}}" method="post">
         @csrf
         @method('post')
         <label for="name">Name : </label>
