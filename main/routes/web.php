@@ -1,16 +1,18 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', 'DeviceController@index' );
+
+Route::get('/', 'DeviceController@index' ) 
+    -> name('home-devices');
+
+Route::get('/device/{id}' , 'DeviceController@show')
+    -> name('show-device');
+
+Route::get('/new/device/create' , 'DeviceController@create')
+    -> name('create-device');
+    
+Route::post('/new/device/store' , 'DeviceController@store')
+    -> name('store-device');

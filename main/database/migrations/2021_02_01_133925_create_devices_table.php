@@ -17,8 +17,8 @@ class CreateDevicesTable extends Migration
             $table->id();
             $table->string('name' , 255);
             $table->string('model' , 255);
-            $table->float('price');
             $table->integer('consumption');
+            $table->integer('price');
             $table->timestamps();
         });
     }
