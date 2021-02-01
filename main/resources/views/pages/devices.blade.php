@@ -1,9 +1,13 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <h1>DEVICE</h1>
-    <ul>
-       <a href="{{route('create-device')}}">Create new device</a>
+
+   <div>
+      <h1>DEVICES</h1>
+      <a class="addbtn" href="{{route('create-device')}}"><i class="fas fa-plus-square"></i>Create</a>
+   </div>
+   
+   <ul>
         
        @foreach($devices as $device)
 

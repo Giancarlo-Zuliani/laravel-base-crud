@@ -1,0 +1,5 @@
+footer {
+    background-color: $headerbackcolor;
+    height: 150px;
+    @include flex(row, center, center);
+}

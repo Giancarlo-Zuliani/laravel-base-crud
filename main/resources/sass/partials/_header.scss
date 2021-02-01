@@ -1,0 +1,6 @@
+header {
+    height: 150px;
+    background-color: $headerbackcolor;
+    @include flex(row, center, center);
+    margin-bottom: 30px;
+}
