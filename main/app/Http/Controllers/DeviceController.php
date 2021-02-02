@@ -39,25 +39,31 @@ class DeviceController extends Controller
         return view('pages.devices-edit',compact('device'));
     }
     public function update(Request $request,$id){
-        $data = $request->except('_method','_token','submit');
+        $data = $request->except('_method','_token','device');
 
       $validator = Validator::make($request->all(), [
          'name' => 'required|string|min:3',
          'model' => 'required|string|min:3',
          'consumption' =>'required|integer',
-         'price' => 'required|integer'
+         'price' => 'required|numeric'
       ]);
 
       if ($validator->fails()) {
          return redirect()->Back()->withInput()->withErrors($validator);
       }
       $subject = Device::find($id);
-
+      $data['price'] = $data['price'] * 100;
       if($subject->update($data)){
-
-         return redirect()->route('home-devices');
-      }
-
+          
+          Session::flash('message', 'Update successfully!');
+          Session::flash('alert-class', 'alert-success');
+          return redirect()->route('home-devices');
+        }else{
+            Session::flash('message', 'Data not updated!');
+            Session::flash('alert-class', 'alert-danger');
+        }
+        
+        dd($subject-> price);
       return Back()->withInput();
    }
     
